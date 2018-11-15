@@ -1,0 +1,9 @@
+E:\cicc-commodity\UDF\DTPricingLib\DTPricingLib\bin\Debug\DTPricingLib.dll
+E:\cicc-commodity\UDF\DTPricingLib\DTPricingLib\bin\Debug\DTPricingLib.pdb
+E:\cicc-commodity\UDF\DTPricingLib\DTPricingLib\bin\Debug\OptionPricingLib.dll
+E:\cicc-commodity\UDF\DTPricingLib\DTPricingLib\bin\Debug\MathNet.Numerics.dll
+E:\cicc-commodity\UDF\DTPricingLib\DTPricingLib\bin\Debug\OptionPricingLib.pdb
+E:\cicc-commodity\UDF\DTPricingLib\DTPricingLib\bin\Debug\MathNet.Numerics.xml
+E:\cicc-commodity\UDF\DTPricingLib\DTPricingLib\obj\Debug\DTPricingLib.csprojResolveAssemblyReference.cache
+E:\cicc-commodity\UDF\DTPricingLib\DTPricingLib\obj\Debug\DTPricingLib.dll
+E:\cicc-commodity\UDF\DTPricingLib\DTPricingLib\obj\Debug\DTPricingLib.pdb

@@ -6,7 +6,7 @@ namespace DTPricingLib
     public class ForwardStart
     {
         [ExcelFunction(Description = "Returns forward_start_option price and greeks through simpson integration")]
-        public static object dtgi_forwardstart([ExcelArgument(Name = "OutPutFlag", Description = "OutPutFlag")] string OutPutFlag,
+        public static object dtei_forwardstart([ExcelArgument(Name = "OutPutFlag", Description = "OutPutFlag")] string OutPutFlag,
             [ExcelArgument(Name = "call or put", Description = "cpflg")] string cpflg,
             [ExcelArgument(Name = "spot price", Description = "S0")] double S0,
             [ExcelArgument(Name = "time to start", Description = "t1")] double t1,
@@ -27,7 +27,7 @@ namespace DTPricingLib
 
             }
 
-            else if (OutPutFlag == "d")
+            else if (OutPutFlag == "delta")
             {
 
                 return_value = OPLib.ForwardStartOption.Delta(cpflg, S0, t1, t2, r, b, vol, a);
@@ -35,7 +35,7 @@ namespace DTPricingLib
 
             }
 
-            else if (OutPutFlag == "v")
+            else if (OutPutFlag == "vega")
             {
 
                 return_value = OPLib.ForwardStartOption.Vega(cpflg, S0, t1, t2, r, b, vol, a);

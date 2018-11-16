@@ -56,12 +56,15 @@
   <ItemGroup>
     <Compile Include="AnalyticBarrierBinaryMethod.cs" />
     <Compile Include="AutoCall.cs" />
+    <Compile Include="BinaryMethod.cs" />
     <Compile Include="BlackScholes.cs" />
     <Compile Include="DiscreteAdjustedBarrierMethod.cs" />
     <Compile Include="ForwardStart.cs" />
     <Compile Include="Flag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StandardBarrierMethod.cs" />
+    <Compile Include="TwoAssetsSpreadApproxyMethod.cs" />
+    <Compile Include="VanillaSpreadMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DTPricingLib-AddIn.dna" />

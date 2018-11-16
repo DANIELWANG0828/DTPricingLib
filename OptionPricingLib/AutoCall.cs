@@ -110,6 +110,8 @@ namespace OptionPricingLib
             w_s0 = null;
             w_sigma = null;
             payoff_vec1 = null;
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
 
 
@@ -160,6 +162,8 @@ namespace OptionPricingLib
             w_s0 = null;
             w_sigma = null;
             payoff_vec2 = null;
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
 
 

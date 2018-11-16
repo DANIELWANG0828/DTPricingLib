@@ -3,10 +3,9 @@ using OPLib = OptionPricingLib;
 
 namespace DTPricingLib
 {
-    public class BlackScholesPricer
-    {
-        [ExcelFunction(Description = "Returns vanilla option price and greeks through Black-Sholes-Merton method")]
-        public static object dtgc_blackscholes([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
+    public class BlackScholesMethod
+    {   [ExcelFunction(Description = "Returns vanilla option price or greek solely through Black-Sholes-Merton method")]
+        public static object dtec_blackscholes([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
                                                [ExcelArgument(Name = "CallPutFlag", Description = Flag.VanillaStyle)] string CallPutFlag,
                                                [ExcelArgument(Name = "S", Description = "Spot price")] double S,
                                                [ExcelArgument(Name = "X", Description = "Strike price")] double X,
@@ -69,7 +68,7 @@ namespace DTPricingLib
         }
 
         [ExcelFunction(Description = "This function returns an array of Black-Sholes-Merton option value and greeks")]
-        public static object dnetGBlackScholesNGreeksArray([ExcelArgument(Name = "CallPutFlag", Description = "call put style")] string CallPutFlag,
+        public static object dtgc_blackscholes([ExcelArgument(Name = "CallPutFlag", Description = "call put style")] string CallPutFlag,
                                        [ExcelArgument(Name = "S", Description = "Spot price")] double S,
                                        [ExcelArgument(Name = "X", Description = "Strike price")] double X,
                                        [ExcelArgument(Name = "T", Description = "Days to expiration")] double T,

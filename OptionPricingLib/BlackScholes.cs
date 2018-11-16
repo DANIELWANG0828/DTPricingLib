@@ -222,13 +222,13 @@ namespace OptionPricingLib
         {
             double theta = double.NaN;
             double deltaT;
-            if (T <= 1 / 365.0)
+            if (T <= 1 / 252)
             {
                 deltaT = 1 - 0.000005;
             }
             else
             {
-                deltaT = 1 / 365.0;
+                deltaT = 1 / 252;
             }
             double bsr = BlackScholes(cpflg, S, X, T - deltaT, r, b, v);
             double bsl = BlackScholes(cpflg, S, X, T, r, b, v);

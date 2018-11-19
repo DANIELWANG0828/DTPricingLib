@@ -5,7 +5,7 @@ namespace DTPricingLib
 {
     public class ForwardStart
     {
-        [ExcelFunction(Description = "Returns forward_start_option price and greeks through simpson integration")]
+        [ExcelFunction(Description = "Returns forward_start_option price and greeks through  integration")]
         public static object dtei_forwardstart([ExcelArgument(Name = "OutPutFlag", Description = "OutPutFlag")] string OutPutFlag,
             [ExcelArgument(Name = "call or put", Description = "cpflg")] string cpflg,
             [ExcelArgument(Name = "spot price", Description = "S0")] double S0,

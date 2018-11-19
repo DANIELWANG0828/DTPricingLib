@@ -25,42 +25,42 @@ namespace DTPricingLib
             double result = double.NaN;
             if (OutPutFlag.Equals("price"))
             {
-                result = OPLib.TwoAssetsSpreadApproxyMethod.TwoAssetsSpread(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho);
+                result = OPLib.TwoAssetsSpreadApproxMethod.TwoAssetsSpread(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho);
             }
 
             else if (OutPutFlag.Equals("delta1"))
             {
-                result = OPLib.TwoAssetsSpreadApproxyMethod.FdDelta1(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
+                result = OPLib.TwoAssetsSpreadApproxMethod.FdDelta1(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
             else if (OutPutFlag.Equals("delta2"))
             {
-                result = OPLib.TwoAssetsSpreadApproxyMethod.FdDelta2(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
+                result = OPLib.TwoAssetsSpreadApproxMethod.FdDelta2(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
             else if (OutPutFlag.Equals("gammap1"))
             {
-                result = OPLib.TwoAssetsSpreadApproxyMethod.FdGammaP1(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
+                result = OPLib.TwoAssetsSpreadApproxMethod.FdGammaP1(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
             else if (OutPutFlag.Equals("gammap2"))
             {
-                result = OPLib.TwoAssetsSpreadApproxyMethod.FdGammaP2(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
+                result = OPLib.TwoAssetsSpreadApproxMethod.FdGammaP2(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
             else if (OutPutFlag.Equals("vega1"))
             {
-                result = OPLib.TwoAssetsSpreadApproxyMethod.FdVega1(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
+                result = OPLib.TwoAssetsSpreadApproxMethod.FdVega1(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
             else if (OutPutFlag.Equals("vega2"))
             {
-                result = OPLib.TwoAssetsSpreadApproxyMethod.FdVega2(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
+                result = OPLib.TwoAssetsSpreadApproxMethod.FdVega2(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
             else if (OutPutFlag.Equals("theta"))
             {
-                result = OPLib.TwoAssetsSpreadApproxyMethod.FdTheta(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
+                result = OPLib.TwoAssetsSpreadApproxMethod.FdTheta(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
             else

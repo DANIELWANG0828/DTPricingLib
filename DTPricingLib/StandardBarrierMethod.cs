@@ -7,7 +7,7 @@ namespace DTPricingLib
     public class StandardBarrierMethod
     {
         [ExcelFunction(Description = "Returns standard barrier option price and greeks through analytic method")]
-        public static object dtgc_standardbarrier([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
+        public static object dtec_standardbarrier([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
                                                [ExcelArgument(Name = "TypeFlag", Description = Flag.StandardBarrierStyle)] string TypeFlag,
                                                [ExcelArgument(Name = "S", Description = "Spot price")] double S,
                                                [ExcelArgument(Name = "X", Description = "Strike price")] double X,

@@ -28,7 +28,7 @@ namespace DTPricingLib
                 result = OPLib.BinaryMethod.FDA_Delta(CallPutFlag, S, x, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("delta+"))
+            else if (OutPutFlag.Equals("delta+"))   
             {
                 result = OPLib.BinaryMethod.FDA_DeltaR(CallPutFlag, S, x, k, T, r, b, v, ds);
             }

@@ -182,14 +182,14 @@ namespace OptionPricingLib
 
             double price = 0.5 * price1 + 0.5 * price2;
             double delta = 0.5 * delta1 + 0.5 * delta2;
-            double gamma = 0.5 * gamma1 + 0.5 * gamma2;
+            double gammap = (0.5 * gamma1 + 0.5 * gamma2) * S0 / 100;
             double vega = 0.5 * vega1 + 0.5 * vega2;
             double theta = 0.5 * theta1 + 0.5 * theta2;
 
 
 
 
-            double[] result = { price, delta, gamma, vega, theta };
+            double[] result = { price, delta, gammap, vega, theta };
 
             return result;
             

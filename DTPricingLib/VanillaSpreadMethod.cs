@@ -22,7 +22,7 @@ namespace DTPricingLib
             double result = double.NaN;
             double result1 = double.NaN;
             double result2 = double.NaN;
-            if (OutPutFlag.Equals("price"))
+            if (OutPutFlag.Equals("p"))
             {
                 result1 = OPLib.BlackScholesMethod.BlackScholes(CallPutFlag, S, X1, T, r, b, v);
                 result2 = OPLib.BlackScholesMethod.BlackScholes(CallPutFlag, S, X2, T, r, b, v);
@@ -40,7 +40,7 @@ namespace DTPricingLib
                 }
             }
 
-            else if (OutPutFlag.Equals("delta"))
+            else if (OutPutFlag.Equals("d"))
             {
                 result1 = OPLib.BlackScholesMethod.FDA_Delta(CallPutFlag, S, X1, T, r, b, v, ds);
                 result2 = OPLib.BlackScholesMethod.FDA_Delta(CallPutFlag, S, X2, T, r, b, v, ds);
@@ -58,7 +58,7 @@ namespace DTPricingLib
                 }
             }
 
-            else if (OutPutFlag.Equals("delta+"))
+            else if (OutPutFlag.Equals("d+"))
             {
                 result1 = OPLib.BlackScholesMethod.FDA_DeltaR(CallPutFlag, S, X1, T, r, b, v, ds);
                 result2 = OPLib.BlackScholesMethod.FDA_Delta(CallPutFlag, S, X2, T, r, b, v, ds);
@@ -76,7 +76,7 @@ namespace DTPricingLib
                 }
             }
 
-            else if (OutPutFlag.Equals("delta-"))
+            else if (OutPutFlag.Equals("d-"))
             {
                 result1 = OPLib.BlackScholesMethod.FDA_DeltaL(CallPutFlag, S, X1, T, r, b, v, ds);
                 result2 = OPLib.BlackScholesMethod.FDA_Delta(CallPutFlag, S, X2, T, r, b, v, ds);
@@ -95,7 +95,7 @@ namespace DTPricingLib
             }
 
 
-            else if (OutPutFlag.Equals("gammap"))
+            else if (OutPutFlag.Equals("gp"))
             {
                 result1 = OPLib.BlackScholesMethod.FDA_GammaP(CallPutFlag, S, X1, T, r, b, v, ds);
                 result2 = OPLib.BlackScholesMethod.FDA_Delta(CallPutFlag, S, X2, T, r, b, v, ds);
@@ -113,7 +113,7 @@ namespace DTPricingLib
                 }
             }
 
-            else if (OutPutFlag.Equals("vega"))
+            else if (OutPutFlag.Equals("v"))
             {
                 result1 = OPLib.BlackScholesMethod.FDA_Vega(CallPutFlag, S, X1, T, r, b, v, ds);
                 result2 = OPLib.BlackScholesMethod.FDA_Delta(CallPutFlag, S, X2, T, r, b, v, ds);
@@ -131,7 +131,7 @@ namespace DTPricingLib
                 }
             }
 
-            else if (OutPutFlag.Equals("theta"))
+            else if (OutPutFlag.Equals("t"))
             {
                 result1 = OPLib.BlackScholesMethod.FDA_Theta(CallPutFlag, S, X1, T, r, b, v, ds);
                 result2 = OPLib.BlackScholesMethod.FDA_Delta(CallPutFlag, S, X2, T, r, b, v, ds);

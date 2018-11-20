@@ -16,38 +16,38 @@ namespace DTPricingLib
                                                [ExcelArgument(Name = "dS", Description = "Delta S")] double ds)
         {
             double result = double.NaN;
-            if (OutPutFlag.Equals("price"))
+            if (OutPutFlag.Equals("p"))
             {
                 result = OPLib.BlackScholesMethod.BlackScholes(CallPutFlag, S, X, T, r, b, v);
             }
 
-            else if (OutPutFlag.Equals("delta"))
+            else if (OutPutFlag.Equals("d"))
             {
                 result = OPLib.BlackScholesMethod.FDA_Delta(CallPutFlag, S, X, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("delta+"))
+            else if (OutPutFlag.Equals("d+"))
             {
                 result = OPLib.BlackScholesMethod.FDA_DeltaR(CallPutFlag, S, X, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("delta-"))
+            else if (OutPutFlag.Equals("d-"))
             {
                 result = OPLib.BlackScholesMethod.FDA_DeltaL(CallPutFlag, S, X, T, r, b, v, ds);
             }
 
 
-            else if (OutPutFlag.Equals("gammap"))
+            else if (OutPutFlag.Equals("gp"))
             {
                 result = OPLib.BlackScholesMethod.FDA_GammaP(CallPutFlag, S, X, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("vega"))
+            else if (OutPutFlag.Equals("v"))
             {
                 result = OPLib.BlackScholesMethod.FDA_Vega(CallPutFlag, S, X, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("theta"))
+            else if (OutPutFlag.Equals("t"))
             {
                 result = OPLib.BlackScholesMethod.FDA_Theta(CallPutFlag, S, X, T, r, b, v, ds);
             }

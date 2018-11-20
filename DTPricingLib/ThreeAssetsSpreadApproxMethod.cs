@@ -34,58 +34,58 @@ namespace DTPricingLib
                                                [ExcelArgument(Name = "dS", Description = "Step size if S")] double dS)
         {
             double result = double.NaN;
-            if (OutPutFlag.Equals("price"))
+            if (OutPutFlag.Equals("p"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.Pricer(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3);
             }
 
-            else if (OutPutFlag.Equals("delta1"))
+            else if (OutPutFlag.Equals("d1"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.FdDelta1(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3, dS);
             }
 
-            else if (OutPutFlag.Equals("delta2"))
+            else if (OutPutFlag.Equals("d2"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.FdDelta2(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3, dS);
             }
 
-            else if (OutPutFlag.Equals("delta3"))
+            else if (OutPutFlag.Equals("d3"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.FdDelta3(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3, dS);
             }
 
 
-            else if (OutPutFlag.Equals("gammap1"))
+            else if (OutPutFlag.Equals("gp1"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.FdGammaP1(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3, dS);
             }
 
-            else if (OutPutFlag.Equals("gammap2"))
+            else if (OutPutFlag.Equals("gp2"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.FdGammaP2(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3, dS);
             }
 
-            else if (OutPutFlag.Equals("gammap3"))
+            else if (OutPutFlag.Equals("gp3"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.FdGammaP3(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3, dS);
             }
 
-            else if (OutPutFlag.Equals("vega1"))
+            else if (OutPutFlag.Equals("v1"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.FdVega1(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3, dS);
             }
 
-            else if (OutPutFlag.Equals("vega2"))
+            else if (OutPutFlag.Equals("v2"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.FdVega2(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3, dS);
             }
 
-            else if (OutPutFlag.Equals("vega3"))
+            else if (OutPutFlag.Equals("v3"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.FdVega3(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3, dS);
             }
 
-            else if (OutPutFlag.Equals("theta"))
+            else if (OutPutFlag.Equals("t"))
             {
                 result = OPLib.ThreeAssetsSpreadApproxMethod.FdTheta(CallPutFlag, S1, S2, S3, Q1, Q2, Q3, X, T, r, b1, b2, b3, v1, v2, v3, rho1, rho2, rho3, dS);
             }

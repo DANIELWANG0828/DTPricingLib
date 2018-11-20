@@ -74,8 +74,11 @@
     <Compile Include="BinaryMethod.cs" />
     <Compile Include="BlackScholes.cs" />
     <Compile Include="BSAmericanApproxMethod.cs" />
+    <Compile Include="BSImpVol.cs" />
     <Compile Include="DiscreteAdjustedBarrierMethod.cs" />
+    <Compile Include="DoubleBarrierMethod.cs" />
     <Compile Include="ForwardStart.cs" />
+    <Compile Include="PartialTimeBarrierMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StandardBarrierMethod.cs" />
     <Compile Include="ThreeAssetsSpreadApproxMethod.cs" />

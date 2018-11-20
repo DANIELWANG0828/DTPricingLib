@@ -23,42 +23,42 @@ namespace DTPricingLib
                                                [ExcelArgument(Name = "dS", Description = "Step size if S")] double dS)
         {
             double result = double.NaN;
-            if (OutPutFlag.Equals("price"))
+            if (OutPutFlag.Equals("p"))
             {
                 result = OPLib.TwoAssetsSpreadApproxMethod.TwoAssetsSpread(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho);
             }
 
-            else if (OutPutFlag.Equals("delta1"))
+            else if (OutPutFlag.Equals("d1"))
             {
                 result = OPLib.TwoAssetsSpreadApproxMethod.FdDelta1(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
-            else if (OutPutFlag.Equals("delta2"))
+            else if (OutPutFlag.Equals("d2"))
             {
                 result = OPLib.TwoAssetsSpreadApproxMethod.FdDelta2(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
-            else if (OutPutFlag.Equals("gammap1"))
+            else if (OutPutFlag.Equals("gp1"))
             {
                 result = OPLib.TwoAssetsSpreadApproxMethod.FdGammaP1(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
-            else if (OutPutFlag.Equals("gammap2"))
+            else if (OutPutFlag.Equals("gp2"))
             {
                 result = OPLib.TwoAssetsSpreadApproxMethod.FdGammaP2(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
-            else if (OutPutFlag.Equals("vega1"))
+            else if (OutPutFlag.Equals("v1"))
             {
                 result = OPLib.TwoAssetsSpreadApproxMethod.FdVega1(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
-            else if (OutPutFlag.Equals("vega2"))
+            else if (OutPutFlag.Equals("v2"))
             {
                 result = OPLib.TwoAssetsSpreadApproxMethod.FdVega2(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }
 
-            else if (OutPutFlag.Equals("theta"))
+            else if (OutPutFlag.Equals("t"))
             {
                 result = OPLib.TwoAssetsSpreadApproxMethod.FdTheta(CallPutFlag, S1, S2, Q1, Q2, X, T, r, b1, b2, v1, v2, rho, dS);
             }

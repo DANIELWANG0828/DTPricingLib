@@ -201,13 +201,13 @@ namespace OptionPricingLib
         {
             double theta = double.NaN;
             double deltaT;
-            if (T <= 1 / 365.0)
+            if (T <= 1 / 252.0)
             {
                 deltaT = 1 - 0.000005;
             }
             else
             {
-                deltaT = 1 / 365.0;
+                deltaT = 1 / 252.0;
             }
             double bsr = StandardBarrierOption(tpflag, S, X, H, k, T - deltaT, r, b, v);
             double bsl = StandardBarrierOption(tpflag, S, X, H, k, T, r, b, v);

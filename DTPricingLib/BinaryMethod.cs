@@ -3,7 +3,7 @@ using OPLib = OptionPricingLib;
 
 namespace DTPricingLib
 {
-    class BinaryMethod
+    class BinaryMethodCashOrNothing
     {
         [ExcelFunction(Description = "Returns vanilla binary option price and greeks through Black-Sholes-Merton method")]
         public static object dtec_cashornothing([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
@@ -18,40 +18,40 @@ namespace DTPricingLib
                                                [ExcelArgument(Name = "dS", Description = "Delta S")] double ds)
         {
             double result = double.NaN;
-            if (OutPutFlag.Equals("price"))
+            if (OutPutFlag.Equals("p"))
             {
-                result = OPLib.BinaryMethod.CashOrNothing(CallPutFlag, S, x, k, T, r, b, v);
+                result = OPLib.BinaryMethodCashOrNothing.CashOrNothing(CallPutFlag, S, x, k, T, r, b, v);
             }
 
-            else if (OutPutFlag.Equals("delta"))
+            else if (OutPutFlag.Equals("p"))
             {
-                result = OPLib.BinaryMethod.FDA_Delta(CallPutFlag, S, x, k, T, r, b, v, ds);
+                result = OPLib.BinaryMethodCashOrNothing.FDA_Delta(CallPutFlag, S, x, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("delta+"))   
+            else if (OutPutFlag.Equals("d+"))   
             {
-                result = OPLib.BinaryMethod.FDA_DeltaR(CallPutFlag, S, x, k, T, r, b, v, ds);
+                result = OPLib.BinaryMethodCashOrNothing.FDA_DeltaR(CallPutFlag, S, x, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("delta-"))
+            else if (OutPutFlag.Equals("d-"))
             {
-                result = OPLib.BinaryMethod.FDA_DeltaL(CallPutFlag, S, x, k, T, r, b, v, ds);
+                result = OPLib.BinaryMethodCashOrNothing.FDA_DeltaL(CallPutFlag, S, x, k, T, r, b, v, ds);
             }
 
 
-            else if (OutPutFlag.Equals("gammap"))
+            else if (OutPutFlag.Equals("gp"))
             {
-                result = OPLib.BinaryMethod.FDA_GammaP(CallPutFlag, S, x, k, T, r, b, v, ds);
+                result = OPLib.BinaryMethodCashOrNothing.FDA_GammaP(CallPutFlag, S, x, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("vega"))
+            else if (OutPutFlag.Equals("v"))
             {
-                result = OPLib.BinaryMethod.FDA_Vega(CallPutFlag, S, x, k, T, r, b, v, ds);
+                result = OPLib.BinaryMethodCashOrNothing.FDA_Vega(CallPutFlag, S, x, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("theta"))
+            else if (OutPutFlag.Equals("t"))
             {
-                result = OPLib.BinaryMethod.FDA_Theta(CallPutFlag, S, x, k, T, r, b, v, ds);
+                result = OPLib.BinaryMethodCashOrNothing.FDA_Theta(CallPutFlag, S, x, k, T, r, b, v, ds);
             }
 
             else

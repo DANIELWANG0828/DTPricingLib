@@ -9,50 +9,50 @@ namespace DTPricingLib
         public static object dtec_discreteasianhhm([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
                                                [ExcelArgument(Name = "CallPutFlag", Description = Flag.VanillaStyle)] string CallPutFlag,
                                                [ExcelArgument(Name = "S", Description = "Spot price")] double S,
-                                               [ExcelArgument(Name = "SA", Description = "Realized Average Price")] double SA,
+                                               [ExcelArgument(Name = "SA", Description = "Realized average price so far")] double SA,
                                                [ExcelArgument(Name = "X", Description = "Strike price")] double X,
-                                               [ExcelArgument(Name = "t1", Description = "****************")] double t1,
+                                               [ExcelArgument(Name = "t1", Description = "time to start of average period in years")] double t1,
                                                [ExcelArgument(Name = "T", Description = "Days to expiration")] double T,
-                                               [ExcelArgument(Name = "n", Description = "****************")] double n,
-                                               [ExcelArgument(Name = "m", Description = "****************")] double m,
+                                               [ExcelArgument(Name = "n", Description = "Number of total averaging points")] double n,
+                                               [ExcelArgument(Name = "m", Description = "Number of averaged points")] double m,
                                                [ExcelArgument(Name = "r", Description = "Interest rate")] double r,
                                                [ExcelArgument(Name = "b", Description = "Cost of carry")] double b,
                                                [ExcelArgument(Name = "v", Description = "Volatility")] double v,
                                                [ExcelArgument(Name = "dS", Description = "Delta S")] double ds)
         {
             double result = double.NaN;
-            if (OutPutFlag.Equals("price"))
+            if (OutPutFlag.Equals("p"))
             {
                 result = OPLib.AsianMethod.DiscreteAsianHHM(CallPutFlag, S, SA, X, t1, T, n, m, r, b, v);
             }
 
-            else if (OutPutFlag.Equals("delta"))
+            else if (OutPutFlag.Equals("d"))
             {
                 result = OPLib.AsianMethod.FDA_Delta(CallPutFlag, S, SA, X, t1, T, n, m, r, b, v,ds);
             }
 
-            else if (OutPutFlag.Equals("delta+"))
+            else if (OutPutFlag.Equals("d+"))
             {
                 result = OPLib.AsianMethod.FDA_DeltaR(CallPutFlag, S, SA, X, t1, T, n, m, r, b, v,ds);
             }
 
-            else if (OutPutFlag.Equals("delta-"))
+            else if (OutPutFlag.Equals("d-"))
             {
                 result = OPLib.AsianMethod.FDA_DeltaL(CallPutFlag, S, SA, X, t1, T, n, m, r, b, v,ds);
             }
 
 
-            else if (OutPutFlag.Equals("gammap"))
+            else if (OutPutFlag.Equals("gp"))
             {
                 result = OPLib.AsianMethod.FDA_GammaP(CallPutFlag, S, SA, X, t1, T, n, m, r, b, v,ds);
             }
 
-            else if (OutPutFlag.Equals("vega"))
+            else if (OutPutFlag.Equals("v"))
             {
                 result = OPLib.AsianMethod.FDA_Vega(CallPutFlag, S, SA, X, t1, T, n, m, r, b, v,ds);
             }
 
-            else if (OutPutFlag.Equals("theta"))
+            else if (OutPutFlag.Equals("t"))
             {
                 result = OPLib.AsianMethod.FDA_Theta(CallPutFlag, S, SA, X, t1, T, n, m, r, b, v,ds);
             }

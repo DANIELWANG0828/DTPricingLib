@@ -112,7 +112,7 @@ namespace DTPricingLib
 
             if (S >= h && (_TypeFlag / 2.0 - (int)(_TypeFlag / 2.0)) == 0)
             {
-                if (OutPutFlag.Equals("price"))
+                if (OutPutFlag.Equals("p"))
                 {
                     if (_TypeFlag == 2)
                         result = k;
@@ -163,7 +163,7 @@ namespace DTPricingLib
                     else if (_TypeFlag == 28)
                         result = 0;
                 }
-                else if (OutPutFlag.Equals("delta") || OutPutFlag.Equals("delta+") || OutPutFlag.Equals("delta-"))
+                else if (OutPutFlag.Equals("d") || OutPutFlag.Equals("d+") || OutPutFlag.Equals("d-"))
                 {
                     if (_TypeFlag == 4)
                         result = 1;
@@ -179,7 +179,7 @@ namespace DTPricingLib
 
             if (S <= h && (_TypeFlag / 2.0 - (int)(_TypeFlag / 2.0) != 0))
             {
-                if (OutPutFlag.Equals("price"))
+                if (OutPutFlag.Equals("d"))
                 {
                     if (_TypeFlag == 1)
                         result = k;
@@ -230,7 +230,7 @@ namespace DTPricingLib
                     else if (_TypeFlag == 27)
                         result = 0;
                 }
-                else if (OutPutFlag.Equals("delta") || OutPutFlag.Equals("delta+") || OutPutFlag.Equals("delta-"))
+                else if (OutPutFlag.Equals("d") || OutPutFlag.Equals("d+") || OutPutFlag.Equals("d-"))
                 {
                     if (_TypeFlag == 3)
                         result = 1;
@@ -244,38 +244,38 @@ namespace DTPricingLib
                 return result;
             }
 
-            if (OutPutFlag.Equals("price"))
+            if (OutPutFlag.Equals("p"))
             {
                 result = OPLib.AnalyticBarrierBinaryMethod.BarrierBinary(TypeFlag, S, x, h, k, T, r, b, v);
             }
 
-            else if (OutPutFlag.Equals("delta"))
+            else if (OutPutFlag.Equals("d"))
             {
                 result = OPLib.AnalyticBarrierBinaryMethod.FDA_Delta(TypeFlag, S, x, h, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("delta+"))
+            else if (OutPutFlag.Equals("d+"))
             {
                 result = OPLib.AnalyticBarrierBinaryMethod.FDA_DeltaR(TypeFlag, S, x, h, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("delta-"))
+            else if (OutPutFlag.Equals("d-"))
             {
                 result = OPLib.AnalyticBarrierBinaryMethod.FDA_DeltaL(TypeFlag, S, x, h, k, T, r, b, v, ds);
             }
 
 
-            else if (OutPutFlag.Equals("gammap"))
+            else if (OutPutFlag.Equals("gp"))
             {
                 result = OPLib.AnalyticBarrierBinaryMethod.FDA_GammaP(TypeFlag, S, x, h, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("vega"))
+            else if (OutPutFlag.Equals("v"))
             {
                 result = OPLib.AnalyticBarrierBinaryMethod.FDA_Vega(TypeFlag, S, x, h, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("theta"))
+            else if (OutPutFlag.Equals("t"))
             {
                 result = OPLib.AnalyticBarrierBinaryMethod.FDA_Theta(TypeFlag, S, x, h, k, T, r, b, v, ds);
             }

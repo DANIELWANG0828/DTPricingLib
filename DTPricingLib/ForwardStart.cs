@@ -19,7 +19,7 @@ namespace DTPricingLib
 
             double return_value = double.NaN;
 
-            if (OutPutFlag == "price")
+            if (OutPutFlag == "p")
             {
 
                 return_value = OPLib.ForwardStartOption.ForwardStart(cpflg, S0, t1, t2, r, b, vol, a);
@@ -27,7 +27,7 @@ namespace DTPricingLib
 
             }
 
-            else if (OutPutFlag == "delta")
+            else if (OutPutFlag == "d")
             {
 
                 return_value = OPLib.ForwardStartOption.Delta(cpflg, S0, t1, t2, r, b, vol, a);
@@ -35,7 +35,7 @@ namespace DTPricingLib
 
             }
 
-            else if (OutPutFlag == "vega")
+            else if (OutPutFlag == "v")
             {
 
                 return_value = OPLib.ForwardStartOption.Vega(cpflg, S0, t1, t2, r, b, vol, a);

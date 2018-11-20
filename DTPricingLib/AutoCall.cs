@@ -73,11 +73,11 @@ namespace DTPricingLib
                 if (double.IsNaN(_result[i])) { result[i] = ExcelError.ExcelErrorValue; }
                 else {result[i] = _result[i]; }
             }
-            if (outputflag == "price") { return result[0]; }
-            else if (outputflag == "delta") { return result[1]; }
-            else if (outputflag == "gamma") { return result[2]; }
-            else if (outputflag == "vega") { return result[3]; }
-            else if (outputflag == "theta") { return result[4]; }
+            if (outputflag == "p") { return result[0]; }
+            else if (outputflag == "d") { return result[1]; }
+            else if (outputflag == "gp") { return result[2]; }
+            else if (outputflag == "v") { return result[3]; }
+            else if (outputflag == "t") { return result[4]; }
             else { return ExcelError.ExcelErrorValue; }
         }
 

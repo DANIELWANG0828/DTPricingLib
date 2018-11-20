@@ -28,7 +28,7 @@ namespace DTPricingLib
 
             if ((OutInFlag.Equals("do") && S <= H) || (OutInFlag.Equals("uo") && S >= H))
             {
-                if (OutPutFlag.Equals("price"))
+                if (OutPutFlag.Equals("p"))
                 {
                     result = k;
                 }
@@ -45,38 +45,38 @@ namespace DTPricingLib
             }
 
 
-            if (OutPutFlag.Equals("price"))
+            if (OutPutFlag.Equals("p"))
             {
                 result = OPLib.StandardBarrierMethod.StandardBarrierOption(TypeFlag, S, X, H, k, T, r, b, v);
             }
 
-            else if (OutPutFlag.Equals("delta"))
+            else if (OutPutFlag.Equals("d"))
             {
                 result = OPLib.StandardBarrierMethod.FDA_Delta(TypeFlag, S, X, H, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("delta+"))
+            else if (OutPutFlag.Equals("d+"))
             {
                 result = OPLib.StandardBarrierMethod.FDA_DeltaR(TypeFlag, S, X, H, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("delta-"))
+            else if (OutPutFlag.Equals("d-"))
             {
                 result = OPLib.StandardBarrierMethod.FDA_DeltaL(TypeFlag, S, X, H, k, T, r, b, v, ds);
             }
 
 
-            else if (OutPutFlag.Equals("gammap"))
+            else if (OutPutFlag.Equals("gp"))
             {
                 result = OPLib.StandardBarrierMethod.FDA_GammaP(TypeFlag, S, X, H, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("vega"))
+            else if (OutPutFlag.Equals("v"))
             {
                 result = OPLib.StandardBarrierMethod.FDA_Vega(TypeFlag, S, X, H, k, T, r, b, v, ds);
             }
 
-            else if (OutPutFlag.Equals("theta"))
+            else if (OutPutFlag.Equals("t"))
             {
                 result = OPLib.StandardBarrierMethod.FDA_Theta(TypeFlag, S, X, H, k, T, r, b, v, ds);
             }

@@ -53,6 +53,9 @@
     <Reference Include="MathNet.Numerics, Version=4.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MathNet.Numerics.4.7.0\lib\net40\MathNet.Numerics.dll</HintPath>
     </Reference>
+    <Reference Include="QLNet, Version=1.11.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QLNet.1.11.2\lib\net45\QLNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -70,14 +73,14 @@
   <ItemGroup>
     <Compile Include="AnalyticBarrierBinaryMethod.cs" />
     <Compile Include="AsianMethod.cs" />
-    <Compile Include="AutoCall.cs" />
+    <Compile Include="AutoCallMethod.cs" />
     <Compile Include="BinaryMethod.cs" />
-    <Compile Include="BlackScholes.cs" />
+    <Compile Include="BlackScholesMethod.cs" />
     <Compile Include="BSAmericanApproxMethod.cs" />
     <Compile Include="BSImpVol.cs" />
     <Compile Include="DiscreteAdjustedBarrierMethod.cs" />
     <Compile Include="DoubleBarrierMethod.cs" />
-    <Compile Include="ForwardStart.cs" />
+    <Compile Include="ForwardStartMethod.cs" />
     <Compile Include="PartialTimeBarrierMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StandardBarrierMethod.cs" />

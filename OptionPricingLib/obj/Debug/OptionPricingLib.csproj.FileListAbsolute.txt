@@ -33,3 +33,4 @@ E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\tr\ZedGraph.resour
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\zh-cn\ZedGraph.resources.dll
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\zh-tw\ZedGraph.resources.dll
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\obj\Debug\OptionPricingLib.csprojResolveAssemblyReference.cache
+E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\QLNet.dll

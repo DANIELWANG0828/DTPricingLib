@@ -79,14 +79,14 @@
   <ItemGroup>
     <Compile Include="AnalyticBarrierBinaryMethod.cs" />
     <Compile Include="AsianMethod.cs" />
-    <Compile Include="AutoCall.cs" />
+    <Compile Include="AutoCallMethod.cs" />
     <Compile Include="BinaryMethod.cs" />
-    <Compile Include="BlackScholes.cs" />
+    <Compile Include="BlackScholesMethod.cs" />
     <Compile Include="BSAmericanApproxMethod.cs" />
     <Compile Include="BSImpVol.cs" />
     <Compile Include="DiscreteAdjustedBarrierMethod.cs" />
     <Compile Include="DoubleBarrierMethod.cs" />
-    <Compile Include="ForwardStart.cs" />
+    <Compile Include="ForwardStartMethod.cs" />
     <Compile Include="Flag.cs" />
     <Compile Include="FuncsList.cs" />
     <Compile Include="InterpolationMethod.cs" />

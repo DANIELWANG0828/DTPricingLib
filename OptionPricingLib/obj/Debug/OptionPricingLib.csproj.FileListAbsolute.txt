@@ -4,7 +4,6 @@ E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\MathNet.Numerics.d
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\MathNet.Numerics.xml
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\obj\Debug\OptionPricingLib.dll
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\obj\Debug\OptionPricingLib.pdb
-E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\obj\Debug\OptionPricingLib.csprojResolveAssemblyReference.cache
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\Accord.dll.config
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\Accord.Controls.dll
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\Accord.dll
@@ -33,3 +32,4 @@ E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\sv\ZedGraph.resour
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\tr\ZedGraph.resources.dll
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\zh-cn\ZedGraph.resources.dll
 E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\bin\Debug\zh-tw\ZedGraph.resources.dll
+E:\cicc-commodity\UDF\DTPricingLib\OptionPricingLib\obj\Debug\OptionPricingLib.csprojResolveAssemblyReference.cache

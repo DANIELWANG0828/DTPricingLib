@@ -2,7 +2,7 @@
 {
     public class FuncsList
     {
-        public const string version = "v20181119";
+        public const string version = "v20181120";
         public static string[,] funcs = {{"Version",version},
             { "Function Name", "Description" },
             { "dtec_blackscholes","Returns vanilla option price or greek solely through Black-Sholes-Merton method" },
@@ -19,9 +19,9 @@
             { "dtgc_discreteAsianhhm","This function returns an array of Discreted Observed Asian option value and greeks"},
             { "dtec_discreteAsianhhm","This function returns price or greek solely of  Discreted Observed Asian option"},
             { "dtec_american","Returns Ameican option price or greeks solely through Bjerksund&Stensland approximation method"},
-            { "",""},
-            { "",""},
-            { "",""},
+            { "dtec_3assetspread","Returns two-asset spread option price or greek solely"},
+            { "dt_linearinterpolation","linear interpolation"},
+            { "dtec_doublebarrier","Returns price or greek solely of double barrier option"},
             { "",""},
             { "",""},
             { "",""},

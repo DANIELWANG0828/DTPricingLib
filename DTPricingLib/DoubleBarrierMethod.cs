@@ -4,7 +4,10 @@ using OPLib = OptionPricingLib;
 namespace DTPricingLib
 {
     public class DoubleBarrierMethod
-    {   public static object dtec_doublebarrier([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
+
+    {
+        [ExcelFunction(Description = "Returns price or greek solely of double barrier option")]
+        public static object dtec_doublebarrier([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
                                                [ExcelArgument(Name = "TypeFlag", Description = Flag.DoubleBarrier)] string TypeFlag,
                                                [ExcelArgument(Name = "S", Description = "Spot price")] double S,
                                                [ExcelArgument(Name = "X", Description = "Strike price")] double X,

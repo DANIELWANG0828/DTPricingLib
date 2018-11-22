@@ -13,6 +13,8 @@ namespace DTPricingLib
             [ExcelArgument(Description = "Carry")] double b,
             [ExcelArgument(Description = "Volatility")] double vol,
             [ExcelArgument(Description = "fixing observation knock out days")] double[] fixings,
+            [ExcelArgument(Description = "Remained Maturity")] double remained_T,
+            [ExcelArgument(Description = "Total Maturity")] double total_T,
             [ExcelArgument(Description = "knock out price")] double ko_price,
             [ExcelArgument(Description = "knock in price")] object ki_price,
             [ExcelArgument(Description = "Strike")] double K,
@@ -27,7 +29,7 @@ namespace DTPricingLib
             if (ki_price is ExcelEmpty) { _ki_price = -1; }
             else { _ki_price = Convert.ToDouble(ki_price); }
 
-            double[] _result = OPLib.AutoCall.AutoCallable(S0, r, b, vol, fixings, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims);
+            double[] _result = OPLib.AutoCall.AutoCallable(S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims);
             object[] result = new object[5];
             for (int i = 0; i < 5; i++)
             {
@@ -51,6 +53,8 @@ namespace DTPricingLib
             [ExcelArgument(Description = "Carry")] double b,
             [ExcelArgument(Description = "Volatility")] double vol,
             [ExcelArgument(Description = "fixing observation knock out days")] double[] fixings,
+            [ExcelArgument(Description = "Remained Maturity")] double remained_T,
+            [ExcelArgument(Description = "Total Maturity")] double total_T,
             [ExcelArgument(Description = "knock out price")] double ko_price,
             [ExcelArgument(Description = "knock in price")] object ki_price,
             [ExcelArgument(Description = "Strike")] double K,
@@ -66,7 +70,7 @@ namespace DTPricingLib
             else { _ki_price = Convert.ToDouble(ki_price); }
        
 
-            double[] _result = OPLib.AutoCall.AutoCallable(S0, r, b, vol, fixings, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims);
+            double[] _result = OPLib.AutoCall.AutoCallable(S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims);
             object[] result = new object[5];
             for (int i = 0; i < 5; i++)
             {
@@ -94,6 +98,8 @@ namespace DTPricingLib
             [ExcelArgument(Description = "Carry")] double b,
             [ExcelArgument(Description = "Volatility")] double vol,
             [ExcelArgument(Description = "fixing observation knock out days")] double[] fixings,
+            [ExcelArgument(Description = "Remained Maturity")] double remained_T,
+            [ExcelArgument(Description = "Total Maturity")] double total_T,
             [ExcelArgument(Description = "knock out price")] double ko_price,
             [ExcelArgument(Description = "knock in price")] object ki_price,
             [ExcelArgument(Description = "Strike")] double K,
@@ -108,14 +114,26 @@ namespace DTPricingLib
             if (ki_price is ExcelEmpty) { _ki_price = -1; }
             else { _ki_price = Convert.ToDouble(ki_price); }
 
-            object result_value = ExcelAsyncUtil.Run("dtgm_autocallAsync", new object[] { S0, r, b, vol, fixings, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims, 0 },
-            () => OPLib.AutoCall.AutoCallable(S0, r, b, vol, fixings, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims));
+            object result_value = ExcelAsyncUtil.Run("dtgm_autocallAsync", new object[] { S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims, 0 },
+            () => OPLib.AutoCall.AutoCallable(S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims));
             if (Equals(result_value, ExcelError.ExcelErrorNA))
             {
                 return "Calculating...";
             }
-           
-            return result_value;
+            double[] _result_value = (double[])result_value;
+            object[] result = new object[5];
+            for (int i = 0; i < 5; i++)
+            {
+                if (double.IsNaN(_result_value[i]))
+                {
+                    result[i] = ExcelError.ExcelErrorValue;
+                }
+                else
+                {
+                    result[i] = _result_value[i];
+                }
+            }
+            return result; 
         }
 
 

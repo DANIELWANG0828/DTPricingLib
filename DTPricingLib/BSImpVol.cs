@@ -5,7 +5,7 @@ namespace DTPricingLib
     public class BSImpVol
     {
         [ExcelFunction(Description = "Returns ImpVol Using Bisec Method")]
-        public static object CsImpVolBisec([ExcelArgument(Name = "CallPutFlag", Description = Flag.VanillaStyle)] string CallPutFlag,
+        public static object dtu_impvol_bisec([ExcelArgument(Name = "CallPutFlag", Description = Flag.VanillaStyle)] string CallPutFlag,
                                                [ExcelArgument(Name = "S", Description = "Spot price")] double S,
                                                [ExcelArgument(Name = "X", Description = "Strike price")] double X,
                                                [ExcelArgument(Name = "T", Description = "Days to expiration")] double T,
@@ -20,7 +20,7 @@ namespace DTPricingLib
         }
 
         [ExcelFunction(Description = "Returns ImpVol Using Newton Ralphson Method")]
-        public static object CsImpVolNR([ExcelArgument(Name = "CallPutFlag", Description = Flag.VanillaStyle)] string CallPutFlag,
+        public static object dtu_impvol_nr([ExcelArgument(Name = "CallPutFlag", Description = Flag.VanillaStyle)] string CallPutFlag,
                                        [ExcelArgument(Name = "S", Description = "Spot price")] double S,
                                        [ExcelArgument(Name = "X", Description = "Strike price")] double X,
                                        [ExcelArgument(Name = "T", Description = "Days to expiration")] double T,

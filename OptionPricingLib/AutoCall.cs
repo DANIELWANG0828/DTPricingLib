@@ -6,6 +6,17 @@ namespace OptionPricingLib
 {
     public class AutoCall
     {
+        private static bool validate_fixing(double[] fixings)
+        {
+            for (int i = 0; i < fixings.Length - 1; i++)
+            { if (fixings[i] >= fixings[i+1])
+                {
+                    return false;
+                }       
+            }
+            return true;
+        }
+
         private static Matrix<double> CumSum(Matrix<double> W)
         {
 
@@ -42,16 +53,22 @@ namespace OptionPricingLib
 
 
         public static double[] AutoCallable(double S0, double r, double b,
-           double vol, double[] fixings, double ko_price, double ki_price, double K,
+           double vol, double[] fixings, double remained_T, double total_T, double ko_price, double ki_price, double K,
            double coupon, double rebate, double nominal, double funding, double annpay, int nsims)
         {
             //annpay 0 stands for absolute,1 stands for annualized
-            int nsteps = (int) Math.Round(fixings[fixings.Length-1] * 252);
+            int nsteps = (int) Math.Round(remained_T * 252);
             Vector<double> payoff_vec1 = Vector<double>.Build.Dense(nsims,0.0);
             Vector<double> payoff_vec2 = Vector<double>.Build.Dense(nsims,0.0);
             Vector<double> jdt = Vector<double>.Build.Dense(nsims, fixings.Last());//specifies ko time at each simulation path
-
             double dt = 1 / 252.0;
+            double passed_time = total_T - remained_T;
+            //check if the fixing days are valid
+            if ( !validate_fixing(fixings))
+            {   double[] error_result = { double.NaN, double.NaN, double.NaN, double.NaN, double.NaN };
+                return error_result;
+            }
+            //get fixing days in days number
             int[] fixing_ko_days = getFixingDays(fixings);
             bool with_ki_feature = true;
             if (ki_price == -1)
@@ -65,9 +82,9 @@ namespace OptionPricingLib
             
             Matrix<double> W = Matrix<double>.Build.Random(nsteps, nsims);
             Matrix<double> Ts = linspace(nsteps).Multiply(Matrix<double>.Build.Dense(1, nsims, 1 / 252.0));
+            
 
-
-
+            //path1  
             Matrix<double> path1 = S0 * ((b - 0.5 * vol * vol) * Ts + vol * CumSum(W * Math.Sqrt(dt))).PointwiseExp();
             for (int j = 0; j < path1.ColumnCount; j++)
             {
@@ -79,21 +96,21 @@ namespace OptionPricingLib
                     {
                         jdt[j] = fixings[k];
                         not_out_flag = false;
-                        payoff_vec1[j] = (coupon-funding) * (Math.Pow(fixings[k], annpay));
+                        payoff_vec1[j] = (coupon-funding) * (Math.Pow(passed_time + fixings[k], annpay));
                         break;
                     }
                 }
 
-                if (not_out_flag && with_ki_feature && path1.Column(j).Min() < ki_price)
+                if (with_ki_feature && not_out_flag && path1.Column(j).Min() < ki_price)
                 {
-                    payoff_vec1[j] = -Math.Max(K - path1.Column(j).Last(), 0) * Math.Exp(-r * fixings.Last())-
-                        funding * (Math.Pow(fixings.Last(), annpay));
+                    payoff_vec1[j] = -Math.Max(K - path1.Column(j).Last(), 0) * Math.Exp(-r * total_T) -
+                        funding * (Math.Pow(total_T, annpay));
 
 
                 }
                 else if (not_out_flag)
                 {
-                    payoff_vec1[j] = (rebate-funding) * (Math.Pow(fixings.Last(), annpay));
+                    payoff_vec1[j] = (rebate-funding) * (Math.Pow(total_T, annpay));
 
                 }
 
@@ -119,8 +136,9 @@ namespace OptionPricingLib
 
 
 
-
-            Matrix <double> path2 = S0 * ((b - 0.5 * vol * vol) * Ts + vol * CumSum(-W * Math.Sqrt(dt))).PointwiseExp();
+            //path2 with anti variate
+            W = -W;
+            Matrix<double> path2 = S0 * ((b - 0.5 * vol * vol) * Ts + vol * CumSum(W * Math.Sqrt(dt))).PointwiseExp();
             jdt = Vector<double>.Build.Dense(nsims, fixings.Last());
             for (int j = 0; j < path2.ColumnCount; j++)
             {
@@ -132,25 +150,24 @@ namespace OptionPricingLib
                     {
                         jdt[j] = fixings[k];
                         not_out_flag = false;
-                        payoff_vec2[j] = (coupon-funding)  * (Math.Pow(fixings[k], annpay));
+                        payoff_vec2[j] = (coupon-funding)  * (Math.Pow(passed_time + fixings[k], annpay));
                         break;
                     }
                 }
 
-                if (not_out_flag && with_ki_feature && path2.Column(j).Min() < ki_price)
+                if (with_ki_feature && not_out_flag && path2.Column(j).Min() < ki_price)
                 {
-                    payoff_vec2[j] = -Math.Max(K - path2.Column(j).Last(), 0) * Math.Exp(-r * fixings.Last())-
-                        funding * (Math.Pow(fixings.Last(), annpay)); ;
+                    payoff_vec2[j] = -Math.Max(K - path2.Column(j).Last(), 0) * Math.Exp(-r * total_T)-
+                        funding * (Math.Pow(total_T, annpay)); ;
              
                 }
                 else if (not_out_flag)
                 {
-                    payoff_vec2[j] = (rebate-funding) * (Math.Pow(fixings.Last(), annpay));
+                    payoff_vec2[j] = (rebate-funding) * (Math.Pow(total_T, annpay));
 
                 }
 
             }
-            W = -W;
             w_s0 = 1 / (vol * S0 * Math.Sqrt(dt)) * W.Row(0);
             double price2 = payoff_vec2.Average();
             double delta2 = payoff_vec2.PointwiseMultiply(w_s0).Average();
@@ -190,10 +207,7 @@ namespace OptionPricingLib
 
 
             double[] result = { price, delta, gammap, vega, theta };
-
             return result;
-            
-
         }
 
        

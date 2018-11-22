@@ -11,7 +11,7 @@ namespace DTPricingLib
     public class ThreeAssetSpreadOptionApprox
     {
         [ExcelFunction(Description = "Returns two-asset spread option price and greeks")]
-        public static object CsAnalytic3AssetSpread([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
+        public static object dtec_3assetspread([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
                                                [ExcelArgument(Name = "CallPutFlag", Description = Flag.VanillaStyle)] string CallPutFlag,
                                                [ExcelArgument(Name = "S1", Description = "Spot price of asset 1")] double S1,
                                                [ExcelArgument(Name = "S2", Description = "Spot price of asset 2")] double S2,

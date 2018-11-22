@@ -85,6 +85,7 @@
     <Compile Include="TwoAssetsSpreadApproxMethod.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="_UNINSTALLED_OptionPricingLib-AddIn.dna" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

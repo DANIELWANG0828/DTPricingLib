@@ -98,7 +98,9 @@
     <Compile Include="VersionUtil.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DTPricingLib-AddIn.dna" />
+    <None Include="DTPricingLib-AddIn.dna">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\ExcelDna.Build.props" />
   </ItemGroup>

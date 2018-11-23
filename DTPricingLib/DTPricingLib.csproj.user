@@ -5,4 +5,7 @@
     <StartProgram>C:\Program Files %28x86%29\Microsoft Office\Root\Office16\EXCEL.EXE</StartProgram>
     <StartArguments>"DTPricingLib-AddIn.xll"</StartArguments>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
 </Project>

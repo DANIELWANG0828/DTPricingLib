@@ -1,5 +1,14 @@
 <DnaLibrary Name="DTPricingLib Add-In" RuntimeVersion="v4.0">
-  <ExternalLibrary Path="DTPricingLib.dll" ExplicitExports="false" LoadFromBytes="true" Pack="true" />
+  <ExternalLibrary Path="DTPricingLib.dll"  LoadFromBytes="true" Pack="true" />
+  <Reference Path="Accord.dll" Pack="true" />
+  <Reference Path="Accord.Controls.dll" Pack="true" />
+  <Reference Path="Accord.Math.Core.dll" Pack="true" />
+  <Reference Path="Accord.Math.dll" Pack="true" />
+  <Reference Path="Accord.Statistics.dll" Pack="true" />
+  <Reference Path="MathNet.Numerics.dll" Pack="true" />
+  <Reference Path="ZedGraph.dll" Pack="true" />
+  <Reference Path="Accord.MachineLearning.dll" Pack="true" />
+  <Reference Path="OptionPricingLib.dll" Pack="true" />
   
   <!-- 
        The RuntimeVersion attribute above allows two settings:
@@ -18,3 +27,4 @@
   -->
 
 </DnaLibrary>
+

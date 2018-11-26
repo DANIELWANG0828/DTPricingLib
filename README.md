@@ -1,6 +1,6 @@
 # DTPricingLib
 目录
-1.	Black-Scholes Method
+1.	Black-Scholes Method\\
 2.	Asian Method
 3.	AutoCall Method
 4.	Binary Method

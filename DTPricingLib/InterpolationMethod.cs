@@ -6,7 +6,7 @@ namespace DTPricingLib
 {
     public class InterpolationMethod
     {
-        public static object dt_linearinterpolation([ExcelArgument(Name = "x1", Description = "x coordinate of the first point")] double x1,
+        public static object dtu_linearinterpolation([ExcelArgument(Name = "x1", Description = "x coordinate of the first point")] double x1,
             [ExcelArgument(Name = "y1", Description = "y coordinate of the first point")] double y1,
             [ExcelArgument(Name = "x2", Description = "x coordinate of the second point")] double x2,
             [ExcelArgument(Name = "y2", Description = "y coordinate of the second point")] double y2,

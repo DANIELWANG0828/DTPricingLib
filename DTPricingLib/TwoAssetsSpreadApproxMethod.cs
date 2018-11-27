@@ -3,7 +3,7 @@ using OPLib = OptionPricingLib;
 
 namespace DTPricingLib
 {
-    public class TwoAssetsSpreadApproxyMethod
+    public class TwoAssetsSpreadApproxMethod
     {
         [ExcelFunction(Description = "Returns two assets spread option price and greeks")]
         public static object dtec_2assetspread([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,
@@ -20,7 +20,7 @@ namespace DTPricingLib
                                                [ExcelArgument(Name = "v1", Description = "Volatility of asset 1")] double v1,
                                                [ExcelArgument(Name = "v2", Description = "Volatility of asset 2")] double v2,
                                                [ExcelArgument(Name = "rho", Description = "Correlation of 2 assets")] double rho,
-                                               [ExcelArgument(Name = "dS", Description = "Step size if S")] double dS)
+                                               [ExcelArgument(Name = "dS", Description = "Step size of S")] double dS)
         {
             double result = double.NaN;
             if (OutPutFlag.Equals("p"))

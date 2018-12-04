@@ -1,7 +1,6 @@
 ﻿using MathNet.Numerics.LinearAlgebra;
 using System;
 using System.Linq;
-
 namespace OptionPricingLib
 {
     public class AutoCallMethod
@@ -16,7 +15,6 @@ namespace OptionPricingLib
             }
             return true;
         }
-
         private static Matrix<double> CumSum(Matrix<double> W)
         {
 
@@ -49,12 +47,18 @@ namespace OptionPricingLib
             }
             return fixing_ko_days;
         }
+        private static double kiPayoffType(double K,Vector<double> onepath)
+        {
+            return Math.Max(K - onepath.Last(), 0);
+        }
+
+       
 
 
 
         public static double[] AutoCallable(double S0, double r, double b,
            double vol, double[] fixings, double remained_T, double total_T, double ko_price, double ki_price, double K,
-           double coupon, double rebate, double nominal, double funding, double annpay, int nsims)
+           double coupon, double rebate, double funding, double annpay, int nsims)
         {
             //annpay 0 stands for absolute,1 stands for annualized
             int nsteps = (int) Math.Round(remained_T * 252);
@@ -103,7 +107,7 @@ namespace OptionPricingLib
 
                 if (with_ki_feature && not_out_flag && path1.Column(j).Min() < ki_price)
                 {
-                    payoff_vec1[j] = -Math.Max(K - path1.Column(j).Last(), 0) * Math.Exp(-r * total_T) -
+                    payoff_vec1[j] = -kiPayoffType(K,path1.Column(j)) * Math.Exp(-r * total_T) -
                         funding * (Math.Pow(total_T, annpay));
 
 
@@ -127,6 +131,7 @@ namespace OptionPricingLib
             w_s0 = null;
             w_sigma = null;
             payoff_vec1 = null;
+            
             GC.Collect();
             GC.WaitForPendingFinalizers();
 
@@ -157,7 +162,7 @@ namespace OptionPricingLib
 
                 if (with_ki_feature && not_out_flag && path2.Column(j).Min() < ki_price)
                 {
-                    payoff_vec2[j] = -Math.Max(K - path2.Column(j).Last(), 0) * Math.Exp(-r * total_T)-
+                    payoff_vec2[j] = -kiPayoffType(K, path2.Column(j)) * Math.Exp(-r * total_T)-
                         funding * (Math.Pow(total_T, annpay)); ;
              
                 }

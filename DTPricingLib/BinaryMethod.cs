@@ -3,7 +3,7 @@ using OPLib = OptionPricingLib;
 
 namespace DTPricingLib
 {
-    class BinaryMethodCashOrNothing
+    public class BinaryMethodCashOrNothing
     {
         [ExcelFunction(Description = "Returns vanilla binary option price and greeks through Black-Sholes-Merton method")]
         public static object dtec_cashornothing([ExcelArgument(Name = "OutPutFlag", Description = Flag.OutputFlag)] string OutPutFlag,

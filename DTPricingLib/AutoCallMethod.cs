@@ -20,7 +20,6 @@ namespace DTPricingLib
             [ExcelArgument(Description = "Strike")] double K,
             [ExcelArgument(Description = "Coupon Rate")] double coupon,
             [ExcelArgument(Description = "Rebate Rate")] double rebate,
-            [ExcelArgument(Description = "Nominal Price")] double nominal,
             [ExcelArgument(Description = "Funding Rate")] double funding,
             [ExcelArgument(Description = "If pay is annualized")] double annpay,
             [ExcelArgument(Description = "N Simulations")] int nsims)
@@ -29,7 +28,7 @@ namespace DTPricingLib
             if (ki_price is ExcelEmpty) { _ki_price = -1; }
             else { _ki_price = Convert.ToDouble(ki_price); }
 
-            double[] _result = OPLib.AutoCallMethod.AutoCallable(S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims);
+            double[] _result = OPLib.AutoCallMethod.AutoCallable(S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate,  funding, annpay, nsims);
             object[] result = new object[5];
             for (int i = 0; i < 5; i++)
             {
@@ -60,7 +59,6 @@ namespace DTPricingLib
             [ExcelArgument(Description = "Strike")] double K,
             [ExcelArgument(Description = "Coupon Rate")] double coupon,
             [ExcelArgument(Description = "Rebate Rate")] double rebate,
-            [ExcelArgument(Description = "Nominal Price")] double nominal,
             [ExcelArgument(Description = "Funding Rate")] double funding,
             [ExcelArgument(Description = "If pay is annualized")] double annpay,
             [ExcelArgument(Description = "N Simulations")] int nsims)
@@ -70,7 +68,7 @@ namespace DTPricingLib
             else { _ki_price = Convert.ToDouble(ki_price); }
        
 
-            double[] _result = OPLib.AutoCallMethod.AutoCallable(S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims);
+            double[] _result = OPLib.AutoCallMethod.AutoCallable(S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate,  funding, annpay, nsims);
             object[] result = new object[5];
             for (int i = 0; i < 5; i++)
             {
@@ -105,7 +103,6 @@ namespace DTPricingLib
             [ExcelArgument(Description = "Strike")] double K,
             [ExcelArgument(Description = "Coupon Rate")] double coupon,
             [ExcelArgument(Description = "Rebate Rate")] double rebate,
-            [ExcelArgument(Description = "Nominal Price")] double nominal,
             [ExcelArgument(Description = "Funding Rate")] double funding,
             [ExcelArgument(Description = "If pay is annualized")] double annpay,
             [ExcelArgument(Description = "N Simulations")] int nsims)
@@ -114,8 +111,8 @@ namespace DTPricingLib
             if (ki_price is ExcelEmpty) { _ki_price = -1; }
             else { _ki_price = Convert.ToDouble(ki_price); }
 
-            object result_value = ExcelAsyncUtil.Run("dtgm_autocallAsync", new object[] { S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims, 0 },
-            () => OPLib.AutoCallMethod.AutoCallable(S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate, nominal, funding, annpay, nsims));
+            object result_value = ExcelAsyncUtil.Run("dtgm_autocallAsync", new object[] { S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate,  funding, annpay, nsims, 0 },
+            () => OPLib.AutoCallMethod.AutoCallable(S0, r, b, vol, fixings, remained_T, total_T, ko_price, _ki_price, K, coupon, rebate,  funding, annpay, nsims));
             if (Equals(result_value, ExcelError.ExcelErrorNA))
             {
                 return "Calculating...";

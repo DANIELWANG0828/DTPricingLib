@@ -1,5 +1,4 @@
-﻿using MathNet.Numerics.Distributions;
-using System;
+﻿using System;
 
 namespace OptionPricingLib
 {
@@ -26,6 +25,7 @@ namespace OptionPricingLib
                 barrier_adj = double.NaN;
             }
             return barrier_adj;
+
         }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class FuncsList
     {
-        public const string version = "v20181203";
+        public const string version = "v20181225";
         public static string[,] funcs = {{"Version",version},
             { "Function Name", "Description" },
             { "dtec_blackscholes","Returns vanilla option price or greek solely through Black-Sholes-Merton method" },

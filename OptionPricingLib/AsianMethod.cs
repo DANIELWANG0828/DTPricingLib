@@ -16,7 +16,7 @@ namespace OptionPricingLib
         public static double DiscreteAsianHHM(string cpflg, double S, double SA, double X,
               double t1, double T, double n, double m, double r, double b, double v)
         {
-            double d1, d2, h, EA, EA2, vA, OptionValue, S1, SA1, X1, price;
+            double d1, d2, h, EA, EA2, vA, OptionValue, SA1, X1, price;
             SA1 = SA;
             X1 = X;
             h = (T - t1) / (n - 1);

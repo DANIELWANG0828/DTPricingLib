@@ -78,14 +78,23 @@
     <Compile Include="BlackScholesMethod.cs" />
     <Compile Include="BSAmericanApproxMethod.cs" />
     <Compile Include="BSImpVol.cs" />
+    <Compile Include="ChooserMethod.cs" />
     <Compile Include="DiscreteAdjustedBarrierMethod.cs" />
     <Compile Include="DoubleBarrierMethod.cs" />
+    <Compile Include="ExoticOnTwoAssetsMethod.cs" />
+    <Compile Include="ExtendibleMethod.cs" />
+    <Compile Include="FadeInMethod.cs" />
     <Compile Include="ForwardStartMethod.cs" />
+    <Compile Include="LookBackMethod.cs" />
+    <Compile Include="QMCMethod.cs" />
     <Compile Include="PartialTimeBarrierMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetStrikeMethod.cs" />
+    <Compile Include="SoftBarrierMethod.cs" />
     <Compile Include="StandardBarrierMethod.cs" />
     <Compile Include="ThreeAssetsSpreadApproxMethod.cs" />
     <Compile Include="TwoAssetsSpreadApproxMethod.cs" />
+    <Compile Include="UtilFuncs.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="_UNINSTALLED_OptionPricingLib-AddIn.dna" />

@@ -72,9 +72,6 @@ namespace DTPricingLib
             {
                 return result;
             }
-
-
-            return result;
         }
 
         
